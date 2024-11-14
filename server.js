@@ -22,6 +22,10 @@ ConnectDB()
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+app.get("/", (req,res)=> {
+  res.status(200).send("landing")
+})
+
 app.use('/api/books', bookRoutes);
 
 const PORT = process.env.PORT || 5000;
